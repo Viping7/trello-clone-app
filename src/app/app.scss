@@ -14,3 +14,61 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500');
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page-wrapper {
+    padding-top: 40px;
+}
+
+.btn-default {
+    margin-top: 10px;
+    float: right;
+    &.green {
+        background: #11674d;
+        color: #fff;
+        box-shadow: none;
+        margin-left: 10px;
+        border-color: transparent;
+    }
+}
+.clear{
+    clear: both;
+}
+.swiper-container-horizontal > .swiper-pagination-progress{
+    bottom: 0px;
+    top: auto;
+}
+.swiper-pagination-progress .swiper-pagination-progressbar{
+    background: #15DCA0
+}
+.slide-zoom{
+    text-align: left;
+}
+ion-slides{
+    height: 88vh !important;
+}
+.swiper-slide{
+    align-items: normal;
+    -webkit-align-items: normal;
+    -ms-flex-align: center;
+}
+.toolbar-background-md{
+    
+    background: rgba(17, 103, 77, 1);
+    
+}
+.toolbar-title-md{
+    color:#fff;
+}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
+    color: #fff;
+}

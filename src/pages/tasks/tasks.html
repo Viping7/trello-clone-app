@@ -1,0 +1,76 @@
+<!--
+  Generated template for the TasksPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>  <h3 class="board-name">{{boardName}}</h3></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class=" task-list-container">
+  
+  <ion-slides spaceBetween='-60' pager paginationType="progress">
+    
+      <ion-slide  *ngFor='let list of newTasksList;let i = index'>
+            <div class="list-card">
+                                <input type="text" [(ngModel)]='list.list_name' readonly class='edit-list-name' (change)='updateListName(list._id,list.list_name)' task-interactions [ngClass]='{"form-control":false}'>
+            <span *ngIf='updateError'>{{updateErrorMsg}}</span>
+            <div class="btn-group actions list-actions" dropdown>
+                <button dropdownToggle type="button" class="dropdown-toggle">
+...
+</button>
+                <ul *dropdownMenu class="dropdown-menu" role="menu">
+                    <li role="menuitem"><a class="dropdown-item" href="javascript:;" (click)='deleteList(list.board_id,list._id)'>Delete List</a></li>
+
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <div *ngFor="let task of list.tasks" class="task-item ">
+                                <h4 class="task-name">{{task.task_name}}</h4>
+                                <!-- <div class="edit-task-name edit-dialog">
+                                    <input type="text"  [(ngModel)]='task.task_name' class="form-control">
+                                    <button class="btn btn-default green save-card" (click)='updateTaskName(task._id,task.task_name)'>Save</button>
+                                    <button class="btn btn-default cancel-card">Cancel</button>
+                                    <div class="clear"></div>
+                                    <div class="close-btn cancel-card" (click)='deleteTask(task._id,task._id)'>&times; Delete Task </div>
+                                </div> -->
+        </div>
+            
+            <div class="task-item new-card edit-dialog">
+                <div class="edit-task">
+                    <textarea class='form-control' [(ngModel)]='taskName'></textarea>
+                    <button class="btn btn-default green save-card" (click)='createTask(taskName,task._id)'>Save</button>
+                    <button class="btn btn-default cancel-card" (click)='cancelAddCard()'>Cancel</button>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <a href='javascript:;' class="add-card" task-interactions>Add a task</a>
+        </div>
+      </ion-slide>
+      <ion-slide>
+            <div class="list-card create-list-card" [ngClass]="{'create-open':showCreateLists}">
+                    <div (click)='showCreateLists=true'><a href='javascript:;'>Create a new list..</a></div>
+                    <div class='create-list' *ngIf='showCreateLists'>
+                        <form (submit)='createList(listName,tasks.board_id)'>
+                            <input type="text" [(ngModel)]='listName' name="listname" class="form-control">
+                            <span *ngIf='updateError'>{{updateErrorMsg}}</span>
+                            <button type="submit" class="btn btn-default green">Save</button>
+                            <button type="button" class="btn btn-default" (click)='hideCreateList()'>Cancel</button>
+                            <div class="clear"></div>
+                        </form>
+                    </div>
+
+                </div>
+      </ion-slide>
+    </ion-slides>
+                  
+                
+                </div>
+</ion-content>

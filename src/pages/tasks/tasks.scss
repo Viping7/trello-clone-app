@@ -1,0 +1,152 @@
+page-tasks {
+    .toolbar-background-md{
+        
+        background: rgba(17, 103, 77, 1);
+        
+    }
+    .toolbar-title-md{
+        color:#fff;
+    }
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
+        color: #fff;
+    }
+    .task-list-container {
+        margin-top: -56px;
+        padding-top: 56px;
+        background: rgba(17, 103, 77, 0.9);
+        min-height: 100vh;
+        .board-name {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 0px;
+        }
+    }
+    
+    .list-card {
+        margin-top: 20px;
+        background: #e2e4e6;
+        display: inline-block;
+        vertical-align: top;
+        margin: 20px 15px;
+        width: 80%;
+        text-align: left;
+        padding: 10px;
+        border-radius: 3px;
+        >input[type=text] {
+            float: left;
+            font-size: 16px;
+            margin-top: 0px;
+            font-weight: 600;
+            border: none;
+            background: none;
+            margin-bottom: 15px;
+            cursor: pointer;
+            text-transform: capitalize;
+            color: #333 !important;
+            &.form-control {
+                background: #fff;
+                border-color: #ccc;
+                box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1) !important;
+                width: 92%;
+            }
+        }
+        .list-actions {
+            float: right;
+        }
+        .task-item {
+            &.new-card {
+                padding: 10px;
+                display: none;
+                background: rgba(255, 255, 255, 0.64);
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+               
+            }
+        }
+        a {
+            color: #666;
+            font-size: 14px;
+            text-decoration: none;
+            ;
+        }
+        &.create-list-card {
+            background: rgba(255, 255, 255, 0.12);
+            a {
+                color: rgba(255, 255, 255, 0.48)
+            }
+            .form-control {
+                &:focus {
+                    border: none;
+                    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1) !important;
+                }
+            }
+            &.create-open {
+                background: #e2e4e6;
+                a {
+                    color: #666;
+                }
+            }
+        }
+        .task-item {
+            background: #fff;
+            padding: 2px 15px 15px 10px;
+            border-radius: 3px;
+            margin-bottom: 8px;
+            position: relative;
+            .selected-card,&.selected-card {
+                position: relative;
+                z-index: 999;
+            }
+            .edit-task-name {
+                background: #fff;
+                padding: 10px;
+                border-radius: 3px;
+                margin: 0px -14px -14px -9px;
+                display: none;
+            }
+            input[type='text'],
+            h4 {
+                font-size: 14px;
+                border: none;
+                margin-top: 5px;
+                text-transform: capitalize;
+            }
+            .form-control {
+                border: 1px solid #eee !important;
+                box-shadow: none;
+            }
+        }
+    }
+    
+    .overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        display: none;
+        z-index: 11;
+        background: rgba(0, 0, 0, 0.6);
+    }
+    
+    .dnd-sortable-drag {
+        -moz-transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+        opacity: 0.7;
+        border: 1px dashed #000;
+    }
+    .edit-task-name{
+        position: relative;
+        .close-btn{
+                position: absolute;
+        right: -100px;
+        top: 2px;
+        background: #c33e3e;
+        color: #fff;
+        padding: 2px 10px;
+        border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+}
